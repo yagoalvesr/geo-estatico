@@ -9,7 +9,7 @@ export class AbstractService {
   protected baseUrl: string;
 
   constructor() {
-    this.baseUrl = 'https://geo-spring.herokuapp.com';
-    // this.baseUrl = 'http://localhost:8080';
+    // this.baseUrl = 'https://geo-spring.herokuapp.com';
+    this.baseUrl = 'http://localhost:8080';
   }
 }

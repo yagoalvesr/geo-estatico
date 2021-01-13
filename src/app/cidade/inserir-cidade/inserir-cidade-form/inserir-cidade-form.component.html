@@ -1,0 +1,47 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit(form)" class="margin-20">
+
+  <div class="row">
+
+    <div class="col-2">
+      <div>
+        <label>Nome da Cidade: </label>
+      </div>
+      <input pInputText formControlName="nome" placeholder="Nome da Cidade">
+      <div *ngIf="form.get('nome').hasError('required') && form.get('nome').touched">
+        <p-message severity="error" text="Insira um nome!"></p-message>
+      </div>
+    </div>
+
+    <div class="col-2">
+      <div>
+        <label>População: </label>
+      </div>
+      <input pInputText type="number" formControlName="populacao" placeholder="Quantidade populacional">
+      <div *ngIf="form.get('populacao').hasError('required') && form.get('populacao').touched">
+        <p-message severity="error" text="Insira quantidade populacional!"></p-message>
+      </div>
+    </div>
+
+    <div class="col-2">
+      <div>
+        <label>Estado: </label>
+      </div>
+      <select class="btn btn-lg dropdown-toggle border border-secondary" formControlName="estadoId">
+        <option *ngFor="let estado of estadoList" [ngValue]="estado.id">
+          {{estado.nome}}
+        </option>
+      </select>
+      <div *ngIf="form.get('estadoId').hasError('required') && form.get('estadoId').touched">
+        <p-message severity="error" text="Selecione um estado!"></p-message>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="margin-20">
+    <p-button type="submit" label="Guardar" [disabled]="form.invalid"></p-button>
+  </div>
+</form>
+
+<p-toast position="top-left"></p-toast>
+
