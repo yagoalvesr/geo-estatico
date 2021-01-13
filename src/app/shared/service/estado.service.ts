@@ -17,6 +17,7 @@ export class EstadoService extends AbstractService {
   }
 
   recuperarTodosEstados(): Observable<EstadoModel[]> {
+    console.log(this.url);
     return this.http.get<EstadoModel[]>(this.url);
   }
 

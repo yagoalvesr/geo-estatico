@@ -11,5 +11,6 @@ export class AbstractService {
   constructor() {
     this.baseUrl = 'https://geo-spring.herokuapp.com';
     // this.baseUrl = 'http://localhost:8080';
+
   }
 }

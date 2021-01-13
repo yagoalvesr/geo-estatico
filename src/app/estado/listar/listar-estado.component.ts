@@ -20,6 +20,7 @@ export class ListarEstadoComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log("recuperar todos estados");
     this.estadoService.recuperarTodosEstados().subscribe((estadoList) => {
       this.estadoList = estadoList;
       this.onEstadoSelect(this.estadoList[1]);
