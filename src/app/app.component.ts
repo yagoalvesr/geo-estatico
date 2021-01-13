@@ -16,6 +16,9 @@ export class AppComponent implements OnInit {
   items: MenuItem[];
 
   ngOnInit(): void {
+
+    console.log("teste");
+
     this.items = [
       {
         label: 'Estados',
