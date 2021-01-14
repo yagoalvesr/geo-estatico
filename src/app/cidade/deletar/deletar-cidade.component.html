@@ -1,0 +1,22 @@
+<h1>Cidades</h1>
+<p>Selecione a cidade que deseja deletar</p>
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th>Nome</th>
+    <th>População</th>
+    <th>Estado</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let cidade of cidadeList" (click)="onCidadeSelected(cidade)" [class.active]="selectedId == cidade.id">
+    <td>{{cidade.nome}}</td>
+    <td>{{cidade.qtdPopulacao}}</td>
+    <td>{{cidade.estadoDTO.nome}}</td>
+  </tr>
+  </tbody>
+</table>
+
+<button pButton type="button" label="Delete" icon="pi pi-trash" [disabled]="!cidadeSelecionada"
+        (click)="deletar()"></button>
+<p-toast position="top-left"></p-toast>

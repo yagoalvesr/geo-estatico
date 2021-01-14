@@ -16,6 +16,9 @@ export class AppComponent implements OnInit {
   items: MenuItem[];
 
   ngOnInit(): void {
+
+    console.log('teste');
+
     this.items = [
       {
         label: 'Estados',
@@ -30,7 +33,15 @@ export class AppComponent implements OnInit {
         items: [{
           label: 'Listar',
           command: () => this.navegar('listar-cidades')
-        }
+        },
+          {
+            label: 'Inserir',
+            command: () => this.navegar('inserir-cidades')
+          },
+          {
+            label: 'Deletar',
+            command: () => this.navegar('deletar-cidades')
+          }
         ]
       }
     ];

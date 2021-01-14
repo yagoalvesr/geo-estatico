@@ -1,0 +1,16 @@
+<div class="m-3">
+  <div *ngFor="let item of itens">
+    <app-inserir-cidade-form [estadoList]="estadoList" [id]="item" [cidadeMap]="cidadeMap">
+    </app-inserir-cidade-form>
+  </div>
+
+  <button pButton pRipple type="button" icon="pi pi-plus" class="p-button-rounded" (click)="adicionarForm()">
+  </button>
+
+  <div class="row">
+    <div class="col-6 d-flex flex-row-reverse">
+      <p-button label="Salvar" (click)="inserirCidades()">
+      </p-button>
+    </div>
+  </div>
+</div>

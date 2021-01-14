@@ -1,0 +1,21 @@
+<h1>Estados</h1>
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th>Nome</th>
+    <th>População</th>
+    <th>Custo Populacional</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let estado of estadoList" (click)="onEstadoSelect(estado)" [class.active]="selectedId == estado.id">
+    <td>{{estado.nome}}</td>
+    <td>{{estado.qtdPopulacao}}</td>
+    <td>{{estado.custoPopulacional | currency: 'BRL'}}</td>
+  </tr>
+  </tbody>
+</table>
+
+<div *ngIf="bandeiraImg" class="background-bandeira d-flex justify-content-center">
+  <img [src]="bandeiraImg" style="height: 200px; margin-top: 20px; margin-bottom: 20px">
+</div>

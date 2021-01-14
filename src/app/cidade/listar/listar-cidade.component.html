@@ -1,0 +1,17 @@
+<h1>Cidades</h1>
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th>Nome</th>
+    <th>População</th>
+    <th>Estado</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let cidade of cidadeList">
+    <td>{{cidade.nome}}</td>
+    <td>{{cidade.qtdPopulacao}}</td>
+    <td>{{cidade.estadoDTO.nome}}</td>
+  </tr>
+  </tbody>
+</table>
